@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Standings{% endblock %}</h1>
+{% endblock %}
+
+<title>
+    Standings
+</title>
+
+<!-- TABLE WITH LAST 5 BEERS THAT WERE CHECKED IN BY THE USER -->
+{% block content %}
+<h2> English Premier League Table</h2>
+<table class="epl_table">
+    <tr class="epl_table">
+        <th class="epl_table">Position</th>
+        <th class="epl_table">Club</th>
+        <th class="epl_table">GP</th>
+        <th class="epl_table">W</th>
+        <th class="epl_table">D</th>
+        <th class="epl_table">L</th>
+        <th class="epl_table">F</th>
+        <th class="epl_table">A</th>
+        <th class="epl_table">GD</th>
+        <th class="epl_table">P</th>
+    </tr>
+    <!-- ITERATING THROUGH EACH ROW OF DATAFRAME -->
+    {% for key,value in standings_table.iterrows() %}
+    {% set POSITION = value['POSITION'] %}
+    {% set URL = value['LOGO_URL'] %}
+    {% set CLUB = value['CLUB'].title() %}
+    {% set GP = value['GP'] %}
+    {% set W = value['W'] %}
+    {% set D = value['D'] %}
+    {% set L = value['L'] %}
+    {% set F = value['F'] %}
+    {% set A = value['A'] %}
+    {% set GD = value['GD'] %}
+    {% set P = value['P'] %}
+    <!-- POPULATING ROW WITH DATAFRAME VALUES -->
+    <tr class="epl_table">
+        <td class="epl_table">{{POSITION}}</td>
+        <div><td class="epl_table" style="vertical-align:1px;"> <img src="{{ URL }}" width="24" height="24"></img> {{CLUB}}</td>
+        <td class="epl_table">{{GP}}</td>
+        <td class="epl_table">{{W}}</td>
+        <td class="epl_table">{{D}}</td>
+        <td class="epl_table">{{L}}</td>
+        <td class="epl_table">{{F}}</td>
+        <td class="epl_table">{{A}}</td>
+        <td class="epl_table">{{GD}}</td>
+        <td class="epl_table">{{P}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - SoccerStats</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1><a class="menu_bar" href="{{ url_for('stats.standings') }}">SoccerStats</a></h1>
+  <ul>
+    <li><span class="welcome_user_menu">Welcome!</span>
+    <li><a class="menu_bar" href="{{ url_for('stats.standings') }}">Stats</a>
+  </ul>
+</nav>
+
+<section class="content">
+  {% block content %}{% endblock %}
+</section>
