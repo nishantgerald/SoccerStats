@@ -10,9 +10,6 @@ from flask import (
     session,
     url_for,
 )
-from werkzeug.security import check_password_hash, generate_password_hash
-import pandas as pd
-import hashlib
 from premier_league_web_scraper import fbref_get_epl_standings
 
 # DEFINING THE BLUEPRINT CALLED `standings`
