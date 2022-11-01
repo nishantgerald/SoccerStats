@@ -13,7 +13,7 @@ from flask import (
 from werkzeug.security import check_password_hash, generate_password_hash
 import pandas as pd
 import hashlib
-from premier_league_web_scraper import get_standings
+from premier_league_web_scraper import fbref_get_epl_standings
 
 # DEFINING THE BLUEPRINT CALLED `standings`
 bp = Blueprint("stats", __name__, url_prefix="/")
@@ -24,6 +24,5 @@ bp = Blueprint("stats", __name__, url_prefix="/")
 
 def standings():
     YEAR='2022'
-    standings_table=get_standings(YEAR)
-    # print(standings)
-    return render_template("stats/standings.html", standings_table=standings_table)
+    epl_standings=fbref_get_epl_standings()
+    return render_template("stats/standings.html", epl_standings=epl_standings)
