@@ -23,6 +23,15 @@
         <th class="epl_table">A</th>
         <th class="epl_table">GD</th>
         <th class="epl_table">P</th>
+        <th class="epl_table">POINT AVG</th>
+        <th class="epl_table">xG FOR</th>
+        <th class="epl_table">xG AGAINST</th>
+        <th class="epl_table">xG DIFF</th>
+        <th class="epl_table">xG DIFF PER 90</th>
+        <th class="epl_table">LAST 5</th>
+        <th class="epl_table">ATTENDANCE PER GAME</th>
+
+
     </tr>
     <!-- ITERATING THROUGH EACH ROW OF DATAFRAME -->
     {% for key,value in epl_standings.iterrows() %}
@@ -37,6 +46,13 @@
     {% set A = value['GOALS_AGAINST'] %}
     {% set GD = value['GOAL_DIFF'] %}
     {% set P = value['POINTS'] %}
+    {% set P_AVG = value['POINTS_AVG'] %}
+    {% set XG_FOR = value['xG_FOR'] %}
+    {% set XG_AGAINST = value['xG_AGAINST'] %}
+    {% set XG_DIFF = value['xG_DIFF'] %}
+    {% set XG_DIFF_PER90 = value['xG_DIFF_PER90'] %}
+    {% set LAST_5 = value['LAST_5'] %}
+    {% set ATTENDANCE_PER_GAME = value['ATTENDANCE_PER_GAME'] %}
     <!-- POPULATING ROW WITH DATAFRAME VALUES -->
     <tr class="epl_table">
         <td class="epl_table">{{POSITION}}</td>
@@ -49,6 +65,14 @@
         <td class="epl_table">{{A}}</td>
         <td class="epl_table">{{GD}}</td>
         <td class="epl_table">{{P}}</td>
+        <td class="epl_table">{{P_AVG}}</td>
+        <td class="epl_table">{{XG_FOR}}</td>
+        <td class="epl_table">{{XG_AGAINST}}</td>
+        <td class="epl_table">{{XG_DIFF}}</td>
+        <td class="epl_table">{{XG_DIFF_PER90}}</td>
+        <td class="epl_table">{{LAST_5}}</td>
+        <td class="epl_table">{{ATTENDANCE_PER_GAME}}</td>
+
     </tr>
     {% endfor %}
 </table>
