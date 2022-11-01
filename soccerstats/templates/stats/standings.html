@@ -25,22 +25,22 @@
         <th class="epl_table">P</th>
     </tr>
     <!-- ITERATING THROUGH EACH ROW OF DATAFRAME -->
-    {% for key,value in standings_table.iterrows() %}
-    {% set POSITION = value['POSITION'] %}
+    {% for key,value in epl_standings.iterrows() %}
+    {% set POSITION = value['RANK'] %}
     {% set URL = value['LOGO_URL'] %}
     {% set CLUB = value['CLUB'].title() %}
-    {% set GP = value['GP'] %}
-    {% set W = value['W'] %}
-    {% set D = value['D'] %}
-    {% set L = value['L'] %}
-    {% set F = value['F'] %}
-    {% set A = value['A'] %}
-    {% set GD = value['GD'] %}
-    {% set P = value['P'] %}
+    {% set GP = value['GAMES'] %}
+    {% set W = value['WINS'] %}
+    {% set D = value['TIES'] %}
+    {% set L = value['LOSSES'] %}
+    {% set F = value['GOALS_FOR'] %}
+    {% set A = value['GOALS_AGAINST'] %}
+    {% set GD = value['GOAL_DIFF'] %}
+    {% set P = value['POINTS'] %}
     <!-- POPULATING ROW WITH DATAFRAME VALUES -->
     <tr class="epl_table">
         <td class="epl_table">{{POSITION}}</td>
-        <div><td class="epl_table" style="vertical-align:1px;"> <img src="{{ URL }}" width="24" height="24"></img> {{CLUB}}</td>
+        <div><td class="epl_table" style="vertical-align:1px;"> <img src="{{ URL }}" width="15" height="15"></img> {{CLUB}}</td>
         <td class="epl_table">{{GP}}</td>
         <td class="epl_table">{{W}}</td>
         <td class="epl_table">{{D}}</td>
