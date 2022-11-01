@@ -105,7 +105,7 @@ def fbref_get_epl_standings():
                  "goals_against": "GOALS_AGAINST",
                  "goal_diff": "GOAL_DIFF",
                  "points": "POINTS",
-                 "points_avg": "PONTS_AVG",
+                 "points_avg": "POINTS_AVG",
                  "xg_for": "xG_FOR",
                  "xg_against": "xG_AGAINST",
                  "xg_diff": "xG_DIFF",
