@@ -59,7 +59,15 @@
         <td class="epl_table">{{P}}</td>
         <td class="epl_table">{{XG_FOR}}</td>
         <td class="epl_table">{{XG_AGAINST}}</td>
-        <td class="epl_table">{{LAST_5}}</td>
+        <td class="epl_table">
+            <div class="row">
+                <span class="{{'wld_block_w' if LAST_5.split()[0]=='W' else 'wld_block_l' if LAST_5.split()[0]=='L' else 'wld_block_d' if LAST_5.split()[0]=='D'}}">{{LAST_5.split()[0]}}</span>
+                <span class="{{'wld_block_w' if LAST_5.split()[1]=='W' else 'wld_block_l' if LAST_5.split()[1]=='L' else 'wld_block_d' if LAST_5.split()[1]=='D'}}">{{LAST_5.split()[1]}}</span>
+                <span class="{{'wld_block_w' if LAST_5.split()[2]=='W' else 'wld_block_l' if LAST_5.split()[2]=='L' else 'wld_block_d' if LAST_5.split()[2]=='D'}}">{{LAST_5.split()[2]}}</span>
+                <span class="{{'wld_block_w' if LAST_5.split()[3]=='W' else 'wld_block_l' if LAST_5.split()[3]=='L' else 'wld_block_d' if LAST_5.split()[3]=='D'}}">{{LAST_5.split()[3]}}</span>
+                <span class="{{'wld_block_w' if LAST_5.split()[4]=='W' else 'wld_block_l' if LAST_5.split()[4]=='L' else 'wld_block_d' if LAST_5.split()[4]=='D'}}">{{LAST_5.split()[4]}}</span>
+            </div>
+        </td>
 
     </tr>
     {% endfor %}
