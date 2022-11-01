@@ -23,6 +23,5 @@ bp = Blueprint("stats", __name__, url_prefix="/")
 @bp.route("/standings", methods=("GET", "POST"))
 
 def standings():
-    YEAR='2022'
     epl_standings=fbref_get_epl_standings()
     return render_template("stats/standings.html", epl_standings=epl_standings)
