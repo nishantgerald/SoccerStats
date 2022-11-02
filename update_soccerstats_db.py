@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sqlite3
+import datetime
 from premier_league_web_scraper import (
     fbref_get_squad_standard_stats,
     fbref_get_squad_goalkeeping_stats,
@@ -131,6 +132,9 @@ def clean_up(db):
     # CLEAN UP
     db.commit()
     db.close()
+    current_time=datetime.datetime.now()
+    with open('last_updated.txt','a+') as out:
+        print(current_time, file=out)
 
 def main():
     cursor, db = recreating_database_with_schema()
